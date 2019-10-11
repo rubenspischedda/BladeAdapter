@@ -1,3 +1,3 @@
-rootProject.name='ImprovedAdapter'
+rootProject.name='BladeAdapter'
 include ':app'
 include ':bladeadapter'

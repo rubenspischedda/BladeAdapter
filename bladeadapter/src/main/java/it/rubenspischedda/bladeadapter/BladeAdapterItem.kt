@@ -1,5 +1,5 @@
 package it.rubenspischedda.bladeadapter
 
-interface ImprovedAdapterItem<T> {
+interface BladeAdapterItem<T> {
     fun copy(): T
 }

@@ -15,25 +15,25 @@ const val TYPE_LOADING = -10
 const val TYPE_EMPTY = 0
 const val TYPE_ITEM = 10
 
-abstract class ImprovedAdapter<T>(
+abstract class BladeAdapter<T>(
     val dataset: ArrayList<T> = arrayListOf(),
     var queueUpdateMethod: QueueUpdateMethod = QueueUpdateMethod.APPLY_IN_ORDER,
-    val filters: ArrayList<ImprovedFilter<T>> = arrayListOf(),
-    val attributes: ArrayList<ImprovedAttribute<*>> = arrayListOf()
+    val filters: ArrayList<BladeFilter<T>> = arrayListOf(),
+    val attributes: ArrayList<BladeAttribute<*>> = arrayListOf()
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     data class UpdateRequest<T>(
         val items: List<T>?,
-        val filters: ArrayList<ImprovedFilter<T>>?,
-        val attributes: ArrayList<ImprovedAttribute<*>>?,
+        val filters: ArrayList<BladeFilter<T>>?,
+        val attributes: ArrayList<BladeAttribute<*>>?,
         val loading: Boolean,
         val onUpdateDone: (() -> Unit)?
     )
 
     var loading = false
 
-    private val fixedFilters = arrayListOf<ImprovedFilter<T>>()
-    private val fixedAttributes = arrayListOf<ImprovedAttribute<*>>()
+    private val fixedFilters = arrayListOf<BladeFilter<T>>()
+    private val fixedAttributes = arrayListOf<BladeAttribute<*>>()
 
     private val pendingUpdates: Deque<UpdateRequest<T>> = ArrayDeque()
     private var operationPending: Boolean = false
@@ -46,8 +46,8 @@ abstract class ImprovedAdapter<T>(
 
     suspend fun updateItems(
         newItems: List<T>? = null,
-        newFilters: ArrayList<ImprovedFilter<T>>? = null,
-        newAttributes: ArrayList<ImprovedAttribute<*>>? = null,
+        newFilters: ArrayList<BladeFilter<T>>? = null,
+        newAttributes: ArrayList<BladeAttribute<*>>? = null,
         newLoading: Boolean = loading,
         onUpdateDone: (() -> Unit)? = null
     ) {
@@ -96,8 +96,8 @@ abstract class ImprovedAdapter<T>(
 
     private suspend fun updateItemsInternal(
         newItems: List<T>?,
-        newFilters: ArrayList<ImprovedFilter<T>>?,
-        newAttributes: ArrayList<ImprovedAttribute<*>>?,
+        newFilters: ArrayList<BladeFilter<T>>?,
+        newAttributes: ArrayList<BladeAttribute<*>>?,
         newLoading: Boolean = loading,
         onUpdateDone: (() -> Unit)? = null
     ) {
@@ -132,8 +132,8 @@ abstract class ImprovedAdapter<T>(
     private suspend fun applyDiffResult(
         newItems: List<T>,
         diffResult: DiffUtil.DiffResult,
-        newFilters: ArrayList<ImprovedFilter<T>> = filters,
-        newAttributes: ArrayList<ImprovedAttribute<*>> = attributes,
+        newFilters: ArrayList<BladeFilter<T>> = filters,
+        newAttributes: ArrayList<BladeAttribute<*>> = attributes,
         newLoading: Boolean = loading,
         onUpdateDone: (() -> Unit)? = null
     ) {
@@ -205,8 +205,8 @@ abstract class ImprovedAdapter<T>(
 
     private fun dispatchUpdates(
         newItems: List<T>,
-        newFilters: ArrayList<ImprovedFilter<T>>,
-        newAttributes: ArrayList<ImprovedAttribute<*>>,
+        newFilters: ArrayList<BladeFilter<T>>,
+        newAttributes: ArrayList<BladeAttribute<*>>,
         newLoading: Boolean,
         diffResult: DiffUtil.DiffResult,
         onUpdateDone: (() -> Unit)? = null
@@ -264,18 +264,18 @@ abstract class ImprovedAdapter<T>(
     abstract fun calculateDiff(
         oldItems: List<T>,
         newItems: List<T>,
-        oldFilters: ArrayList<ImprovedFilter<T>> = arrayListOf(),
-        newFilters: ArrayList<ImprovedFilter<T>> = arrayListOf(),
-        oldAttributes: ArrayList<ImprovedAttribute<*>>,
-        newAttributes: ArrayList<ImprovedAttribute<*>>,
+        oldFilters: ArrayList<BladeFilter<T>> = arrayListOf(),
+        newFilters: ArrayList<BladeFilter<T>> = arrayListOf(),
+        oldAttributes: ArrayList<BladeAttribute<*>>,
+        newAttributes: ArrayList<BladeAttribute<*>>,
         oldLoading: Boolean,
         newLoading: Boolean
     ): DiffUtil.DiffResult
 
     open fun onUpdateDone(
         newItems: List<T>,
-        newFilters: ArrayList<ImprovedFilter<T>>,
-        newAttributes: ArrayList<ImprovedAttribute<*>>,
+        newFilters: ArrayList<BladeFilter<T>>,
+        newAttributes: ArrayList<BladeAttribute<*>>,
         newLoading: Boolean
     ) {
     }
@@ -290,7 +290,7 @@ abstract class ImprovedAdapter<T>(
         return !isInvisible(item)
     }
 
-    open fun passFilters(item: T, filters: List<ImprovedFilter<T>>): Boolean {
+    open fun passFilters(item: T, filters: List<BladeFilter<T>>): Boolean {
         return if (filters.isNotEmpty()) {
             filters.all { f ->
                 f.operation(item)
@@ -298,14 +298,14 @@ abstract class ImprovedAdapter<T>(
         } else true
     }
 
-    fun isRealVisible(item: T, filters: List<ImprovedFilter<T>>): Boolean {
+    fun isRealVisible(item: T, filters: List<BladeFilter<T>>): Boolean {
         return isVisible(item) && passFilters(item, filters)
     }
 
     fun getRealIndex(
         index: Int,
         list: List<T> = dataset,
-        filters: List<ImprovedFilter<T>> = arrayListOf()
+        filters: List<BladeFilter<T>> = arrayListOf()
     ): Int {
 
         var modifiedIndex = index
@@ -363,27 +363,27 @@ abstract class ImprovedAdapter<T>(
         return ArrayList(dataset.filter { f -> isRealVisible(f, filters) })
     }
 
-    fun addOrReplaceFilter(improvedFilter: ImprovedFilter<T>) {
-        if (fixedFilters.firstOrNull { it.id == improvedFilter.id } != null) {
-            fixedFilters.removeAt(fixedFilters.indexOfFirst { it.id == improvedFilter.id })
+    fun addOrReplaceFilter(bladeFilter: BladeFilter<T>) {
+        if (fixedFilters.firstOrNull { it.id == bladeFilter.id } != null) {
+            fixedFilters.removeAt(fixedFilters.indexOfFirst { it.id == bladeFilter.id })
         }
-        fixedFilters.add(improvedFilter)
-        if (filters.firstOrNull { it.id == improvedFilter.id } != null) {
-            filters.removeAt(filters.indexOfFirst { it.id == improvedFilter.id })
+        fixedFilters.add(bladeFilter)
+        if (filters.firstOrNull { it.id == bladeFilter.id } != null) {
+            filters.removeAt(filters.indexOfFirst { it.id == bladeFilter.id })
         }
-        filters.add(improvedFilter)
+        filters.add(bladeFilter)
     }
 
-    suspend fun <R> addOrReplaceAttribute(improvedAttribute: ImprovedAttribute<R>) {
+    suspend fun <R> addOrReplaceAttribute(bladeAttribute: BladeAttribute<R>) {
         val oldAttributes = attributes.copy()
 
-        val toRemoveIndex = oldAttributes.indexOfFirst { f -> f.id == improvedAttribute.id }
+        val toRemoveIndex = oldAttributes.indexOfFirst { f -> f.id == bladeAttribute.id }
 
         if (toRemoveIndex != -1) {
             oldAttributes.removeAt(toRemoveIndex)
         }
 
-        oldAttributes.add(improvedAttribute)
+        oldAttributes.add(bladeAttribute)
 
         updateItems(newAttributes = oldAttributes)
     }
@@ -392,11 +392,11 @@ abstract class ImprovedAdapter<T>(
         fixedFilters.removeAt(fixedFilters.indexOfFirst { it.id == filterId })
     }
 
-    fun getFixedFilters(): ArrayList<ImprovedFilter<T>> {
+    fun getFixedFilters(): ArrayList<BladeFilter<T>> {
         return fixedFilters.copy()
     }
 
-    fun getFixedAttributes(): ArrayList<ImprovedAttribute<*>> {
+    fun getFixedAttributes(): ArrayList<BladeAttribute<*>> {
         return fixedAttributes.copy()
     }
 
