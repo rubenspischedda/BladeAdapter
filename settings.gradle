@@ -1,0 +1,3 @@
+rootProject.name='ImprovedAdapter'
+include ':app'
+include ':bladeadapter'

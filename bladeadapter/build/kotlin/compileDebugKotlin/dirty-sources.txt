@@ -1,0 +1,7 @@
+C:\Users\Rubens\StudioProjects\ImprovedAdapter\bladeadapter\src\main\java\it\rubenspischedda\bladeadapter\ImprovedAdapter.kt
+C:\Users\Rubens\StudioProjects\ImprovedAdapter\bladeadapter\src\main\java\it\rubenspischedda\bladeadapter\ImprovedAdapterItem.kt
+C:\Users\Rubens\StudioProjects\ImprovedAdapter\bladeadapter\src\main\java\it\rubenspischedda\bladeadapter\ImprovedAttribute.kt
+C:\Users\Rubens\StudioProjects\ImprovedAdapter\bladeadapter\src\main\java\it\rubenspischedda\bladeadapter\ImprovedBindingAdapter.kt
+C:\Users\Rubens\StudioProjects\ImprovedAdapter\bladeadapter\src\main\java\it\rubenspischedda\bladeadapter\ImprovedFilter.kt
+C:\Users\Rubens\StudioProjects\ImprovedAdapter\bladeadapter\src\main\java\it\rubenspischedda\bladeadapter\ImprovedUtils.kt
+C:\Users\Rubens\StudioProjects\ImprovedAdapter\bladeadapter\src\main\java\it\rubenspischedda\bladeadapter\QueueUpdateMethod.kt
