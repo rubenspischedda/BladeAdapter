@@ -238,11 +238,6 @@ abstract class BladeAdapter<T>(
         }
         attributes.addAll(newAttributes)
 
-        Log.d(
-            "ADAPEXP",
-            "Current attributes: ${attributes.joinToString { js -> "${js.id}: ${js.value}" }}"
-        )
-
         loading = newLoading
 
         this.onUpdateDone(newItems, newFilters, newAttributes, newLoading)
@@ -261,7 +256,7 @@ abstract class BladeAdapter<T>(
         }
     }
 
-    abstract fun calculateDiff(
+    abstract suspend fun calculateDiff(
         oldItems: List<T>,
         newItems: List<T>,
         oldFilters: ArrayList<BladeFilter<T>> = arrayListOf(),
