@@ -8,10 +8,15 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+        maven {
+            url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2'
+        }
+        maven {
+            url 'https://dl.bintray.com/kotlin/kotlin-eap/'
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.0-beta01'
+        classpath 'com.android.tools.build:gradle:4.0.0-alpha02'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
@@ -25,7 +30,12 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        maven {
+            url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2'
+        }
+        maven {
+            url 'https://dl.bintray.com/kotlin/kotlin-eap/'
+        }
     }
 }
 

@@ -317,7 +317,7 @@ abstract class BladeAdapter<T>(
     }
 
     fun getItemFromAdapterPosition(position: Int): T {
-        return dataset[getRealIndex(position)]
+        return dataset[getRealIndex(position, filters = filters)]
     }
 
     private fun getListUpdateCallback(): ListUpdateCallback {
