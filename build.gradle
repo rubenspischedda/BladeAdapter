@@ -2,21 +2,16 @@
 
 buildscript {
 
-    ext.app_versionName = "0.1.1"
-    ext.kotlin_version = '1.3.50'
+    ext.app_versionName = "0.2.0"
+    ext.kotlin_version = '1.5.20' // your library version
+    ext.group = 'it.rubenspischedda' // whatever group name you'd like
 
     repositories {
         google()
         jcenter()
-        maven {
-            url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2'
-        }
-        maven {
-            url 'https://dl.bintray.com/kotlin/kotlin-eap/'
-        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.0-alpha02'
+        classpath 'com.android.tools.build:gradle:4.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
@@ -30,17 +25,9 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven {
-            url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2'
-        }
-        maven {
-            url 'https://dl.bintray.com/kotlin/kotlin-eap/'
-        }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-apply from: 'publish.gradle'

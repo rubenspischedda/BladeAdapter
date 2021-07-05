@@ -1,0 +1,168 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "BladeAdapter",
+    "module": "bladeadapter",
+    "version": "0.1.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7.1",
+      "buildId": "ijkyfmkm7nffvfc3dcr4yvszx4"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-common",
+          "version": {
+            "requires": "4.2.2"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-runtime",
+          "version": {
+            "requires": "4.2.2"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-adapters",
+          "version": {
+            "requires": "4.2.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "bladeadapter-0.1.1.aar",
+          "url": "bladeadapter-0.1.1.aar",
+          "size": 60885,
+          "sha512": "bde8a29846aa8983c3f75f1b57466eab7e58a27a0f095f031718040df643b8723533f00588e150292d871803488da025ebb41526e34bbeb292ce16e8385c9b85",
+          "sha256": "7fba6fc095ca75cf16e7f0ea0bd0883da57c4d2b65d114723650c67c1acd8578",
+          "sha1": "df347df9c827e52b06b9138d40b55efaadc42c2d",
+          "md5": "d919b4852d388ca595b889cf0287b987"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-common",
+          "version": {
+            "requires": "4.2.2"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-runtime",
+          "version": {
+            "requires": "4.2.2"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-adapters",
+          "version": {
+            "requires": "4.2.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-android-extensions-runtime",
+          "version": {
+            "requires": "1.5.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk7",
+          "version": {
+            "requires": "1.5.20"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.recyclerview",
+          "module": "recyclerview",
+          "version": {
+            "requires": "1.1.0-rc01"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "bladeadapter-0.1.1.aar",
+          "url": "bladeadapter-0.1.1.aar",
+          "size": 60885,
+          "sha512": "bde8a29846aa8983c3f75f1b57466eab7e58a27a0f095f031718040df643b8723533f00588e150292d871803488da025ebb41526e34bbeb292ce16e8385c9b85",
+          "sha256": "7fba6fc095ca75cf16e7f0ea0bd0883da57c4d2b65d114723650c67c1acd8578",
+          "sha1": "df347df9c827e52b06b9138d40b55efaadc42c2d",
+          "md5": "d919b4852d388ca595b889cf0287b987"
+        }
+      ]
+    }
+  ]
+}

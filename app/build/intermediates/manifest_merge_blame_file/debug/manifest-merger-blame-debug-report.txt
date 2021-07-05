@@ -6,26 +6,27 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\Users\Rubens\StudioProjects\ImprovedAdapter\app\src\main\AndroidManifest.xml
+8-->R:\Progetti\AndroidStudioProjects\BladeAdapter\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->C:\Users\Rubens\StudioProjects\ImprovedAdapter\app\src\main\AndroidManifest.xml
+9-->R:\Progetti\AndroidStudioProjects\BladeAdapter\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\Rubens\StudioProjects\ImprovedAdapter\app\src\main\AndroidManifest.xml:4:5-10:43
+11-->R:\Progetti\AndroidStudioProjects\BladeAdapter\app\src\main\AndroidManifest.xml:4:5-10:43
 12        android:allowBackup="true"
-12-->C:\Users\Rubens\StudioProjects\ImprovedAdapter\app\src\main\AndroidManifest.xml:5:9-35
+12-->R:\Progetti\AndroidStudioProjects\BladeAdapter\app\src\main\AndroidManifest.xml:5:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.1.0] C:\Users\Rubens\.gradle\caches\transforms-2\files-2.1\2f6f594b9541db14728d9a6862c5502e\core-1.1.0\AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.1.0] C:\Users\ruben\.gradle\caches\transforms-2\files-2.1\adb3b38852cbf87922b57eac67d279d4\core-1.1.0\AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:icon="@mipmap/ic_launcher"
-15-->C:\Users\Rubens\StudioProjects\ImprovedAdapter\app\src\main\AndroidManifest.xml:6:9-43
+15-->R:\Progetti\AndroidStudioProjects\BladeAdapter\app\src\main\AndroidManifest.xml:6:9-43
 16        android:label="@string/app_name"
-16-->C:\Users\Rubens\StudioProjects\ImprovedAdapter\app\src\main\AndroidManifest.xml:7:9-41
+16-->R:\Progetti\AndroidStudioProjects\BladeAdapter\app\src\main\AndroidManifest.xml:7:9-41
 17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->C:\Users\Rubens\StudioProjects\ImprovedAdapter\app\src\main\AndroidManifest.xml:8:9-54
+17-->R:\Progetti\AndroidStudioProjects\BladeAdapter\app\src\main\AndroidManifest.xml:8:9-54
 18        android:supportsRtl="true"
-18-->C:\Users\Rubens\StudioProjects\ImprovedAdapter\app\src\main\AndroidManifest.xml:9:9-35
-19        android:theme="@style/AppTheme" />
-19-->C:\Users\Rubens\StudioProjects\ImprovedAdapter\app\src\main\AndroidManifest.xml:10:9-40
-20
-21</manifest>
+18-->R:\Progetti\AndroidStudioProjects\BladeAdapter\app\src\main\AndroidManifest.xml:9:9-35
+19        android:testOnly="true"
+20        android:theme="@style/AppTheme" />
+20-->R:\Progetti\AndroidStudioProjects\BladeAdapter\app\src\main\AndroidManifest.xml:10:9-40
+21
+22</manifest>

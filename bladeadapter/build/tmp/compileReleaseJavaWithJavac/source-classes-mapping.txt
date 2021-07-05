@@ -1,0 +1,22 @@
+it/rubenspischedda/bladeadapter/databinding/BladeadapterItemEmptyBinding.java
+ it.rubenspischedda.bladeadapter.databinding.BladeadapterItemEmptyBinding
+it/rubenspischedda/bladeadapter/BuildConfig.java
+ it.rubenspischedda.bladeadapter.BuildConfig
+it/rubenspischedda/bladeadapter/databinding/BladeadapterItemEmptyBindingImpl.java
+ it.rubenspischedda.bladeadapter.databinding.BladeadapterItemEmptyBindingImpl
+it/rubenspischedda/bladeadapter/DataBindingTriggerClass.java
+ it.rubenspischedda.bladeadapter.DataBindingTriggerClass
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+it/rubenspischedda/bladeadapter/BR.java
+ it.rubenspischedda.bladeadapter.BR
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
+it/rubenspischedda/bladeadapter/databinding/BladeadapterItemLoadingBinding.java
+ it.rubenspischedda.bladeadapter.databinding.BladeadapterItemLoadingBinding
+it/rubenspischedda/bladeadapter/DataBinderMapperImpl.java
+ it.rubenspischedda.bladeadapter.DataBinderMapperImpl
+ it.rubenspischedda.bladeadapter.DataBinderMapperImpl$InnerBrLookup
+ it.rubenspischedda.bladeadapter.DataBinderMapperImpl$InnerLayoutIdLookup
+it/rubenspischedda/bladeadapter/databinding/BladeadapterItemLoadingBindingImpl.java
+ it.rubenspischedda.bladeadapter.databinding.BladeadapterItemLoadingBindingImpl

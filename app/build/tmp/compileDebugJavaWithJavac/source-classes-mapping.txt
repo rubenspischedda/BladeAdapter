@@ -1,0 +1,2 @@
+it/rubenspischedda/bladeadapter/BuildConfig.java
+ it.rubenspischedda.bladeadapter.BuildConfig
